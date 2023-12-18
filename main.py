@@ -35,11 +35,28 @@ def get_todo(todo_id):
         return jsonify({"error": "To-Do not found"}), 404
     return jsonify(todo)
 
-# TODO:
-
 # Update a specific To-Do item
+@app.route("/todos/<int:todo_id>", methods=["PUT"])
+def update_todo(todo_id):
+    todo = todos.get(todo_id)
+    if not todo:
+        return jsonify({"error": "To-Do not found"}), 404
+
+    title = request.json.get('title')
+    if not title:
+        return jsonify({"error": "Title is required"}), 400
+
+    todo['title'] = title
+    return jsonify(todo)
 
 # Delete a specific To-Do item
+@app.route("/todos/<int:todo_id>", methods=["DELETE"])
+def delete_todo(todo_id):
+    if todo_id not in todos:
+        return jsonify({"error": "To-Do not found"}), 404
+
+    del todos[todo_id]
+    return jsonify({"message": "To-Do deleted successfully"}), 200
 
 if __name__ == "__main__":
     app.run(debug=True)
