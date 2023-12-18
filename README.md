@@ -34,14 +34,14 @@ python main.py
 The app will start runnnig on http://127.0.0.1:5000/
 
 ### API Endpoints
-- **GET /todos:** Returns a list of all To-Do items.
-- **GET /todos/<int:todo_id>:** Returns details of a specific To-Do item.
-- **POST /todos:** Creates a new To-Do item. Requires a JSON body with a title field.
-- **PUT /todos/<int:todo_id>:** Updates an existing To-Do item. Requires a JSON body with a title field.
-- **DELETE /todos/<int:todo_id>:** Deletes a specific To-Do item.
+- **`GET /todos:`** Returns a list of all To-Do items.
+- **`GET /todos/<int:todo_id>:`** Returns details of a specific To-Do item.
+- **`POST /todos:`** Creates a new To-Do item. Requires a JSON body with a title field.
+- **`PUT /todos/<int:todo_id>:`** Updates an existing To-Do item. Requires a JSON body with a title field.
+- **`DELETE /todos/<int:todo_id>:`** Deletes a specific To-Do item.
 
 ### Testing the API
-You can test the API endpoints using tools like Postman: https://www.postman.com/
+You can test the API endpoints using tools like Postman. Download it from: https://www.postman.com/
 
 ### Notes
 This application is for demonstration purposes and does not use persistent storage. The To-Do items are stored in memory and will be lost when the server is restarted
